@@ -1,0 +1,64 @@
+header {
+  width: 100%;
+  background-color: lightblue;
+}
+
+h2 {
+  text-align: left;
+}
+
+ul {
+  text-align: right;
+  color: #ffffff;
+}
+ 
+nav ul {
+  list-style-type: none; /* Remove default list styling */
+  display: flex; /* Display items in a row */
+  justify-content: center; /* Center items horizontally */
+  padding: 0;
+  margin: 10px 0;
+}
+
+nav ul li {
+  margin-right: 15px; /* Space between items */
+}
+
+#item-3{
+  display: none;
+}
+/* Boxes */
+
+section {
+  display: flex;
+  flex-direction: column; /* Stack images vertically */
+  align-items: center; /* Center images horizontally */
+  justify-content: center; /* Optional: center images vertically */
+  height: 100vh; /* Optional: full viewport height */
+  background-color: #f0f0f0; /* Optional: set a background color */
+}
+
+img {
+  margin: 10px 0; /* Space between images */
+    max-width: 100%; /* Responsive image */
+    height: auto; /* Maintain aspect ratio */
+}
+
+
+#item-1 {
+  background-color: #e0115f;
+}
+
+#item-2 {
+  background-color: #0000ff;
+}
+
+#item-3 {
+  background-color: #999900;
+}
+
+/* Box 3 */
+#image-3 {
+  /* TODO: Add your code here */
+  display: none;
+}
