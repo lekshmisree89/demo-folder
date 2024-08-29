@@ -16,6 +16,7 @@ body {
 h1,
 h2 {
   margin: 20px;
+  color: purple;
 }
 
 main {
@@ -25,25 +26,28 @@ main {
 li {
   display: inline;
   padding: 0px 20px;
-  text-decoration: none;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  
 }
 
 a {
   text-decoration: none;
-  color: #FDF8F5;
+  color: #390978;
 }
 
 header,
 footer {
-  height: 60px;
+  height: 50px;
   width: 100%;
-  line-height: 60px;
-  background-color: #266150;
+  line-height: 70px;
+  text-align:center;
+  background-color: plum
 }
 
 header {
   position: fixed;
   border-bottom: 10px solid #DDAF94;
+  margin: auto;
 }
 
 footer {
