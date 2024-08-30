@@ -9,6 +9,7 @@ body {
 
 main {
   display: flex;
+  flex-wrap: wrap;
   margin-top: 2%;
 }
 
@@ -21,7 +22,10 @@ main {
 }
 
 .card {
-  flex: 1 0 0;
+
+  display: flex;
+  flex: 1 0 400px;
+  flex-wrap: wrap;
   padding: 10px;
   text-align: center;
   border-style: solid;
@@ -39,3 +43,5 @@ main {
   /* The client insists that images be at least 400px */
   min-width: 400px;
 }
+
+

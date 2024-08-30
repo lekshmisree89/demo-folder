@@ -19,7 +19,7 @@ header {
   border-width: 1px;
   padding: 10px;
   float: left;
-  width: 25%;
+  width: 100%;
 }
 
 .card header {
@@ -40,17 +40,24 @@ header {
 
 /* TODO: Use media query to change the width of the cards so they are stacked on top of each other at 768px or smaller */
 
-@media (max-width: 992px) {
+@media screen and (min-width: 650px) {
   .card {
     width: 50%;
+    
+  }
+  header{
+    background-color: red;
   }
 }
 
 /* Media query for screens 768px or smaller */
-@media (max-width: 768px) {
+@media screen and (min-width: 1100px) {
   .card {
-    width: 100%; 
-    
-
+    width: 25%; 
+    background-color: aquamarine;
+  }
+  header{
+    background-color: orange;
   }
 }
+  

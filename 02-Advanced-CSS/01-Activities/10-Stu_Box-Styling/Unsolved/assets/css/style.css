@@ -55,7 +55,7 @@ footer {
 .products {
   flex: 4;
   background-color: #fff;
-  padding: 50px;
+
   display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly;
@@ -68,11 +68,16 @@ footer {
   border-width: 1px;
   padding: 10px;
   margin: 20px;
-  flex: 0 0 300px;
+  flex: 0 0 200px;
+  border-radius: 20px;
+  box-shadow: 5px 5px 5px red;
+  transform: rotate(5deg);
 }
-
+ 
 .card header {
   padding: 20px;
+  border-radius: 15px 15px 0 0;
+
 }
 
 .card p {
@@ -89,3 +94,4 @@ footer {
     flex-direction: column;
   }
 }
+

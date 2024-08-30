@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Snippet Cheatsheet</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>CSS Snippet Cheatsheet</h1>
+        <p>Ever have trouble recalling the exact syntax for your favorite CSS code? Give it a permanent home and add it to this page!</p>
+    </header>
+    
+    <main class="snippet-container">
+        <div class="snippet-card">
+            <h2>Flexbox Row</h2>
+            <pre>
+.row {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+            </pre>
+        </div>
+
+        <div class="snippet-card">
+            <h2>Flexbox Column</h2>
+            <pre>
+.column {
+    display: flex;
+    flex-direction: column;
+}
+            </pre>
+        </div>
+
+        <div class="snippet-card">
+            <h2>CSS Grid Layout</h2>
+            <pre>
+.grid {
+    display: grid;
+    width: 100%;
+    grid-template-columns: repeat(12, 1fr);
+}
+            </pre>
+        </div>
+
+        <div class="snippet-card">
+            <h2>Linear Gradients</h2>
+            <pre>
+.linear-gradient-background {
+    background-image: linear-gradient(
+        rgba(232, 102, 236, 0.3) 0%,
+        rgba(232, 102, 236, 0.6) 100%
+    );
+}
+            </pre>
+        </div>
+
+        <div class="snippet-card">
+            <h2>Box Transition Glow</h2>
+            <pre>
+.code-card .card-header {
+    border-radius: 8px;
+    transition: all 0.5s ease-in-out;
+}
+
+.code-card:hover,
+.code-card:hover .card-header {
+    box-shadow: inset 0px 0px 8px rgba(232, 102, 236, 1), 0 0 15px rgba(232, 102, 236, 1);
+}
+            </pre>
+        </div>
+
+        <div class="snippet-card">
+            <h2>Overlay Card with Title</h2>
+            <pre>
+.card-header {
+    position: relative;
+    margin-top: -20px;
+}
+            </pre>
+        </div>
+    </main>
+
+    <footer>
+        <p>Made with 💖 and CSS</p>
+    </footer>
+</body>
+</html>
+

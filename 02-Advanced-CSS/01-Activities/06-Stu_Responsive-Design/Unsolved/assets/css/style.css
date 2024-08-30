@@ -15,8 +15,9 @@ header {
 }
 
 /* 
-What happens when we set the display property to flex? 
-TODO: Write your answer here 
+what happens when we set the display property to flex? 
+wrap the elemnts in the conatiner inlone into block level;add padding 
+gives us box controls
 */
 nav {
   display: flex;
@@ -32,7 +33,7 @@ nav a {
 
 /* 
 What is the flex-wrap property? 
-TODO: Write your answer here 
+wrap the contents in a  move sid eby side 
 */
 main {
   display: flex;
@@ -56,8 +57,7 @@ footer {
 
 /* 
 What does the justify-content property do? 
-TODO: Write your answer here 
-*/
+move contents to the center */
 .products {
   flex: 4;
   background-color: #fff;
@@ -70,7 +70,10 @@ TODO: Write your answer here
 /* 
 What is the flex property a shorthand property for?
 What is it doing here? 
-TODO: Write your answer here 
+
+flex grow;fles shrink  and width
+mainatins the size of the content
+
 */
 .card {
   border-style: solid;
@@ -94,8 +97,9 @@ TODO: Write your answer here
 
 /* 
 What does the flex-direction property define?
+defines the layout the elemnts is moving
 What is it doing here? 
-TODO: Write your answer here 
+display changes from row to column when width smaller than 768px
 */
 @media screen and (max-width: 768px) {
   main,
