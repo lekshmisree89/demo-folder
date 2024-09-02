@@ -1,0 +1,46 @@
+:root {
+    --primary-color: #e866ec;
+    --secondary-color: #333;
+    --card-bg-color: #1e1212;
+    --text-color: white;
+    --highlight-color: grey;
+   
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: var(--background-gradient);
+    color: var(--text-color);
+    margin: 0;
+    padding: 20px;
+}
+
+header h1 {
+    text-align: center;
+    color: var(--primary-color);
+    margin-bottom: 10px;
+}
+
+header p {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.snippet-container {
+   display: flex;
+   flex-wrap: wrap;
+    justify-content: space-between;
+   
+}
+
+.snippet-card {
+    background-color: var(--card-bg-color);
+    padding: 20px;
+    border: 4px dotted;
+    border-radius: 8px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5);
+    transition: box-shadow var(--transition-duration), transform var(--transition-duration);
+    width: 100%;
+    max-width: calc(33.333% - 20px);
+}
+

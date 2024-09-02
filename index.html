@@ -1,33 +1,128 @@
 <!DOCTYPE html>
-<html lang="en-US">
-
+<html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Bio lekshmi </title>
-    <link rel="stylesheet" href= "styles.css">
-</head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lernantino</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f2f2f2;
+            color: #333;
+        }
 
+        header {
+            background-color: #333;
+            color: #d6f5f2;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 48px;
+            font-weight: normal;
+        }
+
+        nav {
+            background-color: #333;
+            overflow: hidden;
+            text-align: center;
+        }
+
+        nav a {
+            display: inline-block;
+            color: #d6f5f2;
+            padding: 14px 20px;
+            text-decoration: none;
+            font-size: 18px;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: #1cb1a1;
+        }
+
+        .banner {
+            background-image: url('your-image-url.jpg');
+            background-size: cover;
+            background-position: center;
+            padding: 50px;
+            position: relative;
+            text-align: center;
+            color: #333;
+        }
+
+        .banner h2 {
+            background-color: #d6f5f2;
+            display: inline-block;
+            padding: 10px 20px;
+            margin: 0;
+        }
+
+        .content {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 0 20px;
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .content section {
+            flex: 1;
+            margin: 20px;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+        }
+
+        .content section h2 {
+            font-size: 32px;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        .content section p {
+            line-height: 1.6;
+            color: #666;
+        }
+    </style>
+</head>
 <body>
 
-    <header class="title">
-        <h1> My Biography</h1>
+    <header>
+        <h1>Lernantino</h1>
     </header>
 
-    <section class ="lesson">
+    <nav>
+        <a href="#about">About Me</a>
+        <a href="#work">Work</a>
+        <a href="#contact">Contact Me</a>
+        <a href="#resume">Resume</a>
+    </nav>
 
-        <h2>Lekshmi Sreekumar</h2>
-        <img src="assets/image.png" alt="leks image" style="height: 200px; width: 200px;" />
-        <p>My Name is Lekshmi ,Excited to be here!!</p>
-    </section>
+    <div class="banner">
+        <h2>Cool subtitle here!</h2>
+    </div>
 
-    <section>
-        <h2>Contact Info</h2>
-        <ul> 
-            <li id ="email"><strong>Email:</strong><a href="#">lekshmiace@gmail.com</a></li>
-            <li id ="github"><strong>Github:</strong><a href="#">lekshmi</a></li>
-            <li id ="portfolio"><strong>Portfolio:</strong> <a href="#">coming soon</a></li>
-        </ul>
-    </section>
+    <div class="content">
+        <section id="about">
+            <h2>About Me</h2>
+            <p>
+                Helvetica put a bird on it church-key Blue Bottle banjo bespoke brunch Etsy authentic Marfa quinoa typewriter plaid direct trade small batch wayfarers bicycle rights cliche craft beer gastropub single-origin coffee Godard Carles you probably haven't heard of them irony pickled kitsch synth sriracha gentrify literally heirloom blog Truffaut paleo scenester.
+            </p>
+            <p>
+                Echo Park sriracha Pinterest vegan biodiesel 90’s irony iPhone Kickstarter Carles crucifix kitsch narwhal dreamcatcher pickled trust fund selvage art party letterpress Tumblr post-ironic kogi Thundercats Tonx Brooklyn Pitchfork Odd Future authentic normcore freegan leggings Schlitz chambray organic tousled retro fap squid street art church-key fashion axe Wes Anderson bespoke whatever gentrify banh mi you probably haven't heard of them American Apparel next level pug ugh.
+            </p>
+        </section>
+        <section id="work">
+            <h2>Work</h2>
+            <p>Work section content goes here...</p>
+        </section>
+    </div>
+
 </body>
-
 </html>

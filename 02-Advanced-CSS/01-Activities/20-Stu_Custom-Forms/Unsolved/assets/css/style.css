@@ -86,8 +86,23 @@ button {
 }
 
 /* What does this CSS rule do and what does moz and webkit represent? */
+
+
+
 select {
   /* -moz-appearance: none;
+  /*it is used to style the select element/*
+  -moz-appearance: none;:
+
+This is a vendor prefix for Mozilla Firefox. 
+It removes the default styling of the <select> element in Firefox.
+-webkit-appearance: none;:
+
+This is a vendor prefix for WebKit-based browsers,
+ such as Google Chrome and Safari. 
+ It removes the default styling of the <select> element in these
+  browsers.
+
   -webkit-appearance: none; */
   appearance: none;
   background-image: url("../images/arrow.png");
@@ -112,12 +127,24 @@ select:hover, button:hover {
   box-shadow: 0 0 5px #999;
 }
 
-/* What does this pseudo-class mean? */
+/* What does this pseudo-class mean?
+
+focus in CSS targets an element that currently has focus. 
+This means that when a user interacts with an element,
+ such as by clicking on it or navigating to it 
+ with the keyboard (usually using the Tab key), t
+ he element is considered to be in focus.
+
+*/
 .text-input:focus {
   border-right-width: 5px;
 }
 
-/* What does this pseudo-class mean? */
+/* What does this pseudo-class mean? 
+:placeholder-shown: This pseudo-class applies styles
+ to the element when the placeholder text is visible, 
+meaning the element is empty.*/
+
 .text-input:placeholder-shown {
   border-style: dashed;
 }
@@ -136,7 +163,13 @@ select:hover, button:hover {
   margin-right: 2%;
 }
 
-/* What does this selector do? */
+/* What does this selector do? 
+When a checkbox with the class checkbox is checked, this rule:
+
+Changes the text color of the adjacent label element 
+to #999999 (a light gray).
+Applies italic styling to the text of the adjacent label.
+*/
 .checkbox:checked + label {
   color: #999999;
   font-style: italic;

@@ -100,8 +100,9 @@ display the links when the mouse hovers over t
 he parent element */
 
 .resources:hover + .hidden {
-  display: block;
+display: block;
 }
+
 
 
 @media screen and (max-width: 768px) {

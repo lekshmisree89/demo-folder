@@ -61,7 +61,42 @@ article p {
 
 /* TODO: Style the term/phrase - underline, black text, grab cursor */
 
-/* TODO: Position tooltip above the term/phrase, same color as header and nav links, no border-radius, smaller font size */
+
+
+span[data-info]{
+  color:black;
+  display: inline;
+  text-decoration: underline;
+  cursor: grab;
+  position: relative;
+}
+
+
+
+
+span[data-info]::before {
+  content: attr(data-info);
+  position: absolute;
+  width: 150px;
+  padding: 10px;
+  border: 1px solid blueviolet;
+  bottom: 125%; 
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: blue;
+  color:wheat;
+  padding:5px;
+  visibility: hidden;
+}
+
+.css:hover::before {
+  visibility: visible;
+  
+}
+
+
+/* TODO: Position tooltip above the term/phrase, same color as header and nav links, 
+no border-radius, smaller font size */
 
 aside {
   width: 25%;

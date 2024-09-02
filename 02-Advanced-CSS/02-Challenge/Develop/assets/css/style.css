@@ -209,7 +209,8 @@ main {
   background-repeat: no-repeat;
   background-size: 100% 0.2em;
   background-position: bottom;
-  transition: all 0.25s ease-in;
+  /* portfolio project images 
+  transition: all 0.25s ease-in;*/
   margin: 0 0.2rem 0.1rem;
   display: inline-block;
 }
@@ -220,30 +221,29 @@ main {
 }
 
 /* portfolio project images */
-/* TODO: Add portfolio project images here using background images*/
 .run-buddy {
-  
+  width:100px;
+  height:100px;
+  background-image: url("https://media.istockphoto.com/id/1403500817/photo/the-craggies-in-the-blue-ridge-mountains.jpg?s=612x612&w=is&k=20&c=hTfPWNhNUjyWL189yEQyKVmmZA6Mg3rOaah1NV7_-p8=")
 }
-
 .led-wall {
-  
+  width:100px;
+  background-image: url("https://media.istockphoto.com/id/1403500817/photo/the-craggies-in-the-blue-ridge-mountains.jpg?s=612x612&w=is&k=20&c=hTfPWNhNUjyWL189yEQyKVmmZA6Mg3rOaah1NV7_-p8=")
 }
-
 .react-calc {
-  
+  width:100px;
+  background-image: url("https://media.istockphoto.com/id/1403500817/photo/the-craggies-in-the-blue-ridge-mountains.jpg?s=612x612&w=is&k=20&c=hTfPWNhNUjyWL189yEQyKVmmZA6Mg3rOaah1NV7_-p8=")
 }
-
 .pastel-puzzles {
-  
+  width:100px;
+  background-image: url("https://media.istockphoto.com/id/1403500817/photo/the-craggies-in-the-blue-ridge-mountains.jpg?s=612x612&w=is&k=20&c=hTfPWNhNUjyWL189yEQyKVmmZA6Mg3rOaah1NV7_-p8=")
 }
-
 .surf-report {
-  
+  width:260px;
+  background-image: url("https://media.istockphoto.com/id/1403500817/photo/the-craggies-in-the-blue-ridge-mountains.jpg?s=612x612&w=is&k=20&c=hTfPWNhNUjyWL189yEQyKVmmZA6Mg3rOaah1NV7_-p8=")
 }
+/* end portfolio project images */
 
-/* media queries */
-
-/* media queries for a max-width of 980px */
 @media screen and (max-width: 980px) {
   header {
     padding: 0 0 10px 0;
@@ -277,4 +277,23 @@ main {
   }
 }
 
-/* TODO: add media query for a max-width of 768px */
+@media screen and (max-width: 768px) {
+  .flex-item,
+  .flex-item:first-child {
+    flex-basis: 100%;
+  }
+
+  .flex-item:first-child {
+    min-height: 150px;
+  }
+
+  .hero-banner {
+    justify-content: center;
+    text-align: center;
+  }
+
+  .contact address {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
