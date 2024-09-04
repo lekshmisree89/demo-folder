@@ -27,7 +27,8 @@ const sayGoodbyeAgain = function () {
   return;
 };
 
-// Shadowing happens when the same variable is used in the local and global scope
+// Shadowing happens when the same variable 
+//is used in the local and global scope
 const shadow = 'Hello';
 console.log(shadow);
 

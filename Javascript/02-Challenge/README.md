@@ -104,3 +104,49 @@ Follow the link below to open this autograded assignment in a new tab. Once you 
 > **note** You are allowed to miss up to two Challenge assignments and still earn your certificate. If you complete all Challenge assignments, your lowest two grades will be dropped. If you wish to skip this assignment, click Next, and move on to the next Module.
 
 > **important** No matter how difficult the course becomes, you must always turn in original work. Plagiarism is not tolerated. If your instructional or support staff determine that you have plagiarized work, your Student Success Advisor will determine the appropriate course of action based on university policy. Such actions may include, but are not limited to, a documented plagiarism discussion, an incomplete or failing grade assignment, or ineligibility for graduation.
+
+
+
+
+
+
+const collectEmployees = function() {
+  const employees = [];
+
+  do {
+    const firstName = prompt("Enter the employee's first name:");
+    const lastName = prompt("Enter the employee's last name:");
+    const salary = parseFloat(prompt("Enter the employee's salary:"));
+
+    // Create a new employee object
+    const employee = {
+      firstName: firstName,
+      lastName: lastName,
+      salary: salary
+    };
+
+    // Add the employee object to the employees array
+    employees.push(employee);
+
+  } while (confirm("Would you like to add another employee?"));
+
+  return employees;
+}
+
+const displayAverageSalary = function(employeesArray) {
+  const totalSalary = employeesArray.reduce((accum, employee) => accum + employee.salary, 0);
+  const averageSalary = totalSalary / employeesArray.length;
+
+  // Ensure the average salary is formatted to two decimal places
+  console.log(`The average employee salary between our ${employeesArray.length} employee(s) is $${averageSalary.toFixed(2)}`);
+}
+
+
+const getRandomEmployee = function(employeesArray) {
+  const randomIndex = Math.floor(Math.random() * employeesArray.length);
+  const randomEmployee = employeesArray[randomIndex];
+
+  console.log(`Congratulations to ${randomEmployee.firstName} ${randomEmployee.lastName}, our random drawing winner!`);
+}
+
+

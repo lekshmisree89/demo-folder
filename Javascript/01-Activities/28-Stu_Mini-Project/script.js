@@ -2,7 +2,10 @@ function playGame() {
     let wins = 0;
     let losses = 0;
     let ties = 0;
-    let userChoices = { R: 0, P: 0, S: 0 };
+    let userChoices = { 
+        R: 0,
+        P: 0,
+        S: 0 };
     
     const choices = ["R", "P", "S"];
     

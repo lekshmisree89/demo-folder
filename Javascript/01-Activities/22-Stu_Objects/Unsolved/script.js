@@ -1,24 +1,24 @@
 // WRITE YOUR CODE BELOW
 let customerDrink = {
-    name: "Coffee",  // The drink's name
-    sugars: 2,           // The number of sugars
-    isReady: false       // Boolean indicating whether the order is ready
+    name: "Coffee",  
+    sugars: 3,          
+    isReady: true,    
 };
-console.log(`Drink: ${customerDrink.name}, Sugars: ${customerDrink.sugars}`);
-// Output: Drink: Coffee, Sugars: 2
+console.log(customerDrink.name);
+console.log(customerDrink.sugars);
+
+console.log(`The drink is ${customerDrink.name} 
+and sugar needed is ${customerDrink.sugars}`);
+
+
+
+
+
 
 if (customerDrink.isReady) {
-    console.log("Ready for pick-up");
+    console.log(`Your ${customerDrink.name} is ready for pick-up`);
 } else {
-    console.log("Still in order queue");
+    console.log(`Your ${customerDrink.name} is still in order queue`);
 }
-// Output: Still in order queue (because isReady is false)
 
-customerDrink.isReady = true;
-
-if (customerDrink.isReady) {
-    console.log("Ready for pick-up");
-} else {
-    console.log("Still in order queue");
-}
-// Output: Ready for pick-up
+  

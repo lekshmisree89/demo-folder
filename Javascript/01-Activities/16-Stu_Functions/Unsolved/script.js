@@ -13,26 +13,30 @@ function isEqual(x, y) {
 // Logs 'They are equal in type and value'
 isEqual(10, 10);
 
-// Refer to sample functions as needed!
 
 // TODO: Call the isEqual function so that it logs
 // 'They are equal in value'
+isEqual(10,'10');
+
 
 // TODO: Rewrite isEqual as a function expression
 // called 'isEqualTakeTwo`
 
-// TODO: Call the isEqualTakeTwo function so that it logs 
-//'They are not equal'
 
-const isEqualTakeTwo= function(value1, value2) {
-  if (value1 === value2) {
+const isEqualTakeTwo = function(num1, num2) {
+  if (num1 === num2) {
       console.log("They are equal in type and value");
-  } else if (value1 == value2) {
+  } else if (num1 == num2) {
       console.log("They are equal in value");
   } else {
       console.log("They are not equal");
   }
+  return;
 };
+// TODO: Call the isEqualTakeTwo 
+//function so that it logs :They are not equal'
 
-isEqualTakeTwo(10,20);
+isEqualTakeTwo(10,'hello');
+
+
 

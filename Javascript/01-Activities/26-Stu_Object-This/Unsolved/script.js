@@ -2,7 +2,7 @@
 console.log(this);
 
 // TODO: What does 'this' refer to?
-function helloThis() {
+function helloThis() {//fn helloThis
   console.log(`Inside this function, this is ${this}`);
 }
 
