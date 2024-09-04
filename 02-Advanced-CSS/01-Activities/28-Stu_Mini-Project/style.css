@@ -1,6 +1,6 @@
 :root {
-    --primary-color: #e866ec;
-    --secondary-color: #333;
+    --main-color: #dc33e2;
+    --secondary-color: #d148aa;
     --card-bg-color: #1e1212;
     --text-color: white;
     --highlight-color: grey;
@@ -17,13 +17,15 @@ body {
 
 header h1 {
     text-align: center;
-    color: var(--primary-color);
+    color: purple;
     margin-bottom: 10px;
 }
 
 header p {
     text-align: center;
+    color: #d148aa;
     margin-bottom: 40px;
+    color: var(--main-color);
 }
 
 .snippet-container {
@@ -43,4 +45,37 @@ header p {
     width: 100%;
     max-width: calc(33.333% - 20px);
 }
+.snippet-card h2 {
+    margin-top: 0;
+    color: var(--main-color);
+}
 
+pre {
+    background-color: var(--secondary-color);
+    padding: 10px;
+    border-radius: 5px;
+    white-space: pre-wrap;
+    user-select: text;
+    overflow-x: auto;
+    margin: 0;
+    font-family: 'Courier New', Courier, monospace;
+    color: var(--text-color);
+}
+
+footer {
+    text-align: center;
+    margin-top: 50px;
+    color: var(--primary-color);
+}
+
+@media (max-width: 992px) {
+    .snippet-card {
+        max-width: calc(50% - 20px);
+    }
+}
+
+@media (max-width: 768px) {
+    .snippet-card {
+        max-width: 100%;
+    }
+}
