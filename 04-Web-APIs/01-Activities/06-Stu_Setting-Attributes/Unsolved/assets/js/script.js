@@ -35,6 +35,8 @@ const h4Tags=document.querySelectorAll('h4');
 console.log(h4Tags);
 
 for (let i = 0; i < h4Tags.length; i++) {
-  h4Tags[i].setAttribute('style',
-  "fontsize:50px;paddingLeft:50px;margin:0") ;      
+  h4Tags[i].setAttribute('style','color:blue; font-size:50px; padding-left:50px; margin:0;') ;      
 };
+
+// style = "color:blue; font-size: 50px"
+// h4.style.fontSize = 23

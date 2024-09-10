@@ -27,6 +27,7 @@ function renderLastGrade() {
 
 saveButton.addEventListener('click', function (event) {
   event.preventDefault();
+  
   saveLastGrade();
   renderLastGrade();
 });

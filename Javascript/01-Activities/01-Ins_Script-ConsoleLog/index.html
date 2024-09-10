@@ -1,28 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Script Tags and Console Log</title>
+  <title>Quiz App</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <!-- <link rel="stylesheet" href="styles.css"> -->
 </head>
-
 <body>
-  <h1 style="text-align:center;">Open the Console to See the Magic ✨! </h1>
 
-  <!--Inline script-->
-
-  <script>
-
-    // Console logs write data directly to the console.
-
-    console.log("This is the log for the 🔥INLINE🔥 JavaScript");
-
-  </script>
-
-  <!--Link to external JavaScript file-->
+  <div class="container mt-5">
+    <h1 class="text-center">Quiz App</h1>
+    <div id="quiz-container" class="mt-4">
+      <!-- Quiz content will be generated dynamically -->
+    </div>
+    <div id="result" class="text-center mt-3"></div>
+    <button id="next-question" class="btn btn-primary mt-3">Next Question</button>
+  </div>
 
   <script src="script.js"></script>
-
 </body>
 </html>

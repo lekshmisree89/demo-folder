@@ -17,7 +17,7 @@ if (
 
   // Adds text content to created tag
   tag.textContent = `This was made via prompts. It's a ${tagName}.`;
-
+tag.style.color='purple';
   // Appends tag as child of document body
   document.body.appendChild(tag);
 }

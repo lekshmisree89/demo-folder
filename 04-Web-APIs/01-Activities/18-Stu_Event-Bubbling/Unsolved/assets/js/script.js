@@ -1,6 +1,8 @@
 // TODO: Which element is the following line of code selecting?
+//select the div with class carosel box;
 const carousel = document.querySelector('.carouselbox');
 // TODO: Which element is the following line of code selecting?
+//buttons with class next and prev
 const next = carousel.querySelector('.next');
 const prev = carousel.querySelector('.prev');
 let index = 0;
@@ -27,13 +29,18 @@ function navigate(direction) {
 }
 
 // TODO: Describe the functionality of the following event listener.
+//when user clicks on the carousel elemnt ,will go to the 
+//url of the image
 carousel.addEventListener('click', function () {
   window.location.href = images[index];
 });
 
-// TODO: Describe the functionality of the following event listener.
+// TODO: Describe the functionality of the following
+// event listener.
+
 next.addEventListener('click', function (event) {
   // TODO: What is the purpose of the following line of code?
+  //prevents event bubbling
   event.stopPropagation();
 
   navigate(1);
@@ -42,7 +49,7 @@ next.addEventListener('click', function (event) {
 // TODO: Describe the functionality of the following event listener.
 prev.addEventListener('click', function (event) {
   // TODO: What would happen if we didn't add the following line of code?
-  event.stopPropagation();
+  //event.stopPropagation();
 
   navigate(-1);
 });

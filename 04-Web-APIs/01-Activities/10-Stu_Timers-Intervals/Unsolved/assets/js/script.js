@@ -39,7 +39,7 @@ function displayMessage() {
       mainEl.textContent = words[wordCount];
       wordCount++;
     }
-  }, 1000);
+  }, 5000);
 }
 
 countdown();
