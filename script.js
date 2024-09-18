@@ -74,4 +74,24 @@ const quizData = [
     resultContainer.innerHTML = `<h2>Quiz Completed!</h2>`;
     scoreBoardEl.innerHTML = `Final Score: ${score} / ${quizData.length}`;
   }
-  
+  let timeLeft = 60; // Set timer for 60 seconds
+const timerDisplay = document.getElementById('time');
+let timerInterval;
+
+// Start the timer
+function startTimer() {
+  timerInterval = setInterval(() => {
+    timeLeft--;
+    timerDisplay.textContent = timeLeft;
+
+    // When time is up
+    if (timeLeft <= 0) {
+      clearInterval(timerInterval);
+      alert('Time is up!');
+      // Add any other actions when the timer ends (e.g., end the quiz)
+    }
+  }, 1000); // Updates every second
+}
+
+// Start the timer when the quiz starts
+startTimer();
