@@ -1,0 +1,7 @@
+{
+ /s"username": "lek",
+ /s"location": "nj",
+ /s"bio": "gfghfgfghg",
+ /s"linkedin": "ltk980",
+ /s"github": "980"
+}

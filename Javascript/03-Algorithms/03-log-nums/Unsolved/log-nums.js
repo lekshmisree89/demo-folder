@@ -1,4 +1,10 @@
 // Write code to print all numbers from 1 to `num`
 // Assume `num` will be a positive number
+ //for loop to loopthrough 1 to num and print in the console
+var logNums = function(num) {
+        for (let i = 1; i <= num; i++) {
+      console.log(i);
+    }
+  };
 
-var logNums = function(num) {};
+  logNums(5);

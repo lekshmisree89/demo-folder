@@ -1,4 +1,4 @@
-(process.argv);
+
 
 
 
@@ -7,7 +7,7 @@
 // console.log(process.argv);
 // const [, ,firstName,lastName] =process.argv;
 // console.log(firstName,lastName);
-console.log(process.argv[2]);
+console.log(process.argv);
 
 
 

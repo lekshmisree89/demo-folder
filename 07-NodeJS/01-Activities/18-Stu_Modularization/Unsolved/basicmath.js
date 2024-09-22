@@ -4,3 +4,4 @@ export default {
   product: (a, b) => a * b,
   quotient: (a, b) => a / b,
 };
+

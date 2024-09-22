@@ -9,7 +9,7 @@ console.log(colors.bgMagenta('Hello World!'));
 // bright background color
 console.log(colors.bgBrightMagenta('Hello World!'));
 // styles
-console.log(colors.underline('Hello World!'));
+console.log(colors.underline.bgYellow('Hello World!'));
 // extras
 console.log(colors.rainbow('Hello World!'));
 
