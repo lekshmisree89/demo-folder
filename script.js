@@ -1,97 +1,67 @@
-const quizData = [
-    {
-      question: 'What is the capital of France?',
-      choices: ['Paris', 'London', 'Berlin', 'Madrid'],
-      correct: 'Paris',
-    },
-    {
-      question: 'Who developed JavaScript?',
-      choices: ['Brendan Eich', 'Linus Torvalds', 'Elon Musk', 'Bill Gates'],
-      correct: 'Brendan Eich',
-    },
-    // Add more questions here
-  ];
+function init () {
+
+  const inquirer = require('inquirer');
+  const fs = require('fs'); 
+  const generate = require('./utils/generateMarkdown.js');
+  const path = require('path');
   
-  let currentQuestionIndex = 0;
-  let score = 0;
-  
-  document.addEventListener('DOMContentLoaded', loadQuiz);
-  document.getElementById('next-question').addEventListener('click', handleNextQuestion);
-  
-  function loadQuiz() {
-    const questionData = quizData[currentQuestionIndex];
-    const quizContainer = document.getElementById('quiz-container');
-    const feedbackEl = document.getElementById('feedback');
-    const scoreBoardEl = document.getElementById('score-board');
-  
-    feedbackEl.innerHTML = ''; // Clear feedback message
-    quizContainer.innerHTML = `
-      <h2>${questionData.question}</h2>
-      ${questionData.choices.map((choice, index) => `
-        <div class="form-check">
-          <input type="radio" name="answer" id="choice${index}" value="${choice}" class="form-check-input">
-          <label for="choice${index}" class="form-check-label">${choice}</label>
-        </div>
-      `).join('')}
-    `;
-  
-    // Display the current score
-    scoreBoardEl.innerHTML = `Score: ${score} / ${quizData.length}`;
+  inquirer
+    .prompt([
+      { 
+        type: "input",
+        message: "What is a good Title for your project?",
+        name: "title",  
+           },
+      { 
+        type: "input",
+        message: "What is a good Description of your project?",
+        name: "description",  
+           },
+      {
+         type: "input",
+         message: "How do you Install your application?",
+         name: "installation",
+      },
+      {
+        type: "input",
+        message: "How do you Install your application?",
+        name: "installation",
+     },
+      {
+          type: "input",
+          message: "How do you Use your application?",
+          name: "usage",
+      },
+      {
+          type: "checkbox",
+          message: "What License did you use for this repository?",
+          choices: ["MIT", "GNU General Public License 2.0", "Apache License 2.0", "GNU General Public License 3.0"],
+          name: "license",
+      },
+      {
+          type: "input",
+          message: "How can people Contribute to your project?",
+          name: "contributing",
+      },
+     {
+          type: "input",
+          message: "How do people update the tests for your project?",
+          name: "tests"
+      },
+      {
+          type: "input",
+          message: "What is your GitHub username?",
+          name: "github"
+      },
+      {
+          type: "input",
+          message: "What is your email address where users and contributors can send questions?",
+          name: "email"
+      },
+    ])
+    .then((response) => {
+      return fs.writeFileSync(path.join (process.cwd(), "README.md"), generate(response));
+    });
   }
   
-  function handleNextQuestion() {
-    const selectedAnswer = document.querySelector('input[name="answer"]:checked');
-    const feedbackEl = document.getElementById('feedback');
-  
-    if (selectedAnswer) {
-      const userAnswer = selectedAnswer.value;
-      if (userAnswer === quizData[currentQuestionIndex].correct) {
-        score++;
-        feedbackEl.innerHTML = '<span class="text-success">Correct!</span>';
-      } else {
-        feedbackEl.innerHTML = `<span class="text-danger">Wrong! The correct answer is ${quizData[currentQuestionIndex].correct}.</span>`;
-      }
-  
-      currentQuestionIndex++;
-  
-      if (currentQuestionIndex < quizData.length) {
-        // Load the next question after a brief delay
-        setTimeout(loadQuiz, 1000); // Wait for 1 second before loading the next question
-      } else {
-        showResult();
-      }
-  
-      // Save progress to localStorage
-      localStorage.setItem('quizProgress', JSON.stringify({ score, currentQuestionIndex }));
-    } else {
-      feedbackEl.innerHTML = '<span class="text-warning">Please select an answer before proceeding!</span>';
-    }
-  }
-  
-  function showResult() {
-    const resultContainer = document.getElementById('quiz-container');
-    const scoreBoardEl = document.getElementById('score-board');
-    resultContainer.innerHTML = `<h2>Quiz Completed!</h2>`;
-    scoreBoardEl.innerHTML = `Final Score: ${score} / ${quizData.length}`;
-  }
-  let timeLeft = 60; // Set timer for 60 seconds
-const timerDisplay = document.getElementById('time');
-let timerInterval;
-
-// Start the timer
-function startTimer() {
-  timerInterval = setInterval(() => {
-    timeLeft--;
-    timerDisplay.textContent = timeLeft;
-
-    // When time is up
-    if (timeLeft <= 0) {
-      clearInterval(timerInterval);
-      alert('Time is up!');
-      // Add any other actions when the timer ends (e.g., end the quiz)
-    }
-  }, 1000); // Updates every second
-}
-
-// Start the timer when the quiz starts
-startTimer();
+  init();
