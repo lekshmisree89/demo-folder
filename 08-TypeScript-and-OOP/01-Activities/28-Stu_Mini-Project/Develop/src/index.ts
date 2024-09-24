@@ -5,9 +5,9 @@ import ZooWorker from './classes/ZooWorker.js';
 // Note that the above are explicitly importing in .js files as the current tsconfig cannot correctly path to the necessary files. The classes will be referred correctly after the dist folder is generated.
 
 // TODO: Create an array that will take in the Animal Objects
-const starterAnimalData;
+const starterAnimalData =[];
 // TODO: Create an array that will take in the Employee Objects
-const starterEmployeeData;
+const starterEmployeeData =[];
 
 // Add the existing animals and employees
 // TODO: The following default objects will not be created. Update the related classes to make the objects generate

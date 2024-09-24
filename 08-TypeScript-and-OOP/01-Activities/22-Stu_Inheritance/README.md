@@ -1,14 +1,7 @@
 # 📖 Implement Inheritance in TypeScript
 
 Work with a partner to implement the following user story:
-
-* As a developer, I want to define various shapes such as circles, rectangles, and triangles, so I can calculate and display their areas and perimeters.
-
-## Acceptance Criteria
-
-* It's done when I've created `Circle`, `Rectangle`, and `Triangle` classes that inherit from the `Shape` class.
-
-* It's done when I call the `displayInfo` method for each class and the correct values are displayed.
+c
 
 ## 📝 Notes
 
