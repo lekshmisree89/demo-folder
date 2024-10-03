@@ -1,0 +1,50 @@
+[
+  {
+    "id": "5809ea63-69b2-4bac-970a-68b84dcf0d62",
+    "contactName": "Gamon Rarza",
+    "phone": "555-555-1234",
+    "email": "grar84@example.com"
+  },
+  {
+    "id": "5809ea63-69b2-4bac-970a-68b84dcf0d85",
+    "contactName": "Rander Xapstine",
+    "phone": "555-555-9123",
+    "email": "rxap123@example.com"
+  },
+  {
+    "id": "ee464ae8-41df-4d61-8895-d199217f8141",
+    "contactName": "Fatt Myke",
+    "phone": "555-555-5555",
+    "email": "fmyke@example.com"
+  },
+  {
+    "id": "42b574bd-a687-4772-9c56-f5450293947e",
+    "contactName": "Jon Doe",
+    "phone": "555-969-6523",
+    "email": "testing123@example.com"
+  },
+  {
+    "id": "413649ff-2bba-4369-a5f2-ad4164510529",
+    "contactName": "123",
+    "phone": "12344444",
+    "email": "leksh9@gmail.com"
+  },
+  {
+    "id": "9d8bc72f-5bf6-438f-9250-763162bd4a57",
+    "contactName": "alex",
+    "phone": "12345566",
+    "email": "qwe@123.com"
+  },
+  {
+    "id": "70a0663a-ebd1-4bbf-80b7-5b81da383bec",
+    "contactName": "ssaas",
+    "phone": "123434",
+    "email": "sadsad@123.com"
+  },
+  {
+    "id": "c2ba6578-fd1b-4e41-a310-15c9e6bcb423",
+    "contactName": "alex",
+    "phone": "sdsadsf",
+    "email": "123@34.com"
+  }
+]

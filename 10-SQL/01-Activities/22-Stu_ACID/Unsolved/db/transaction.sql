@@ -1,0 +1,56 @@
+DROP DATABASE IF EXISTS library;
+
+-- Create a new database
+CREATE DATABASE library;
+
+-- Connect to the newly created database
+\c library;
+
+DROP TABLE IF EXISTS books;
+DROP TABLE IF EXISTS authors;
+
+-- Create a books table
+CREATE TABLE books (
+    book_id INTEGER PRIMARY KEY,
+    book_name VARCHAR(255)
+);
+
+-- Create an authors table
+CREATE TABLE authors (
+    author_id INTEGER PRIMARY KEY,
+    author_name VARCHAR(255)
+);
+
+-- TODO: Add a transaction block here
+DO $$
+  DECLARE
+      -- Any variable declarations would go here
+  BEGIN
+      -- Begin transaction
+
+INSERT INTO books (book_id, book_name)
+VALUES
+    (1, 'Pride and Prejudice'),
+    (2, 'To Kill a Mockingbird'),
+    (3, 'The Great Gatsby');
+
+INSERT INTO authors (author_id, author_name)
+VALUES
+    (10, 'Jane Austen'),
+    (11, 'Harper Lee');
+
+
+    RAISE NOTICE 'Transaction complete';
+
+EXCEPTION
+    WHEN OTHERS THEN
+        RAISE NOTICE 'An error occurred: %', SQLERRM; -- Log the error
+        ROLLBACK; -- Explicitly roll back changes in case of error
+END $$;
+
+SELECT * FROM authors;
+SELECT * FROM books;
+
+
+SELECT authors.author_name FROM authors  JOIN books.book_name ON authors.id = books.author_id;
+

@@ -1,14 +1,13 @@
 import inquirer from 'inquirer';
-import type Animal from './Animal.js';
+import Animal from "./Animal.js";
 import type Employee from './Employee.js';
-import type ZooAnimals from '../interfaces/ZooAnimals.js';
 import ZooKeeper from './ZooKeeper.js';
 import ZooWorker from './ZooWorker.js';
-// Note that the above are explicitly importing in .js files as the current tsconfig cannot correctly path to the necessary files. The classes will be referred correctly after the dist folder is generated.
 
 class Cli {
   animals: Animal[];
   employees: Employee[];
+
   constructor(animals: Animal[], employees: Employee[]) {
     this.animals = animals;
     this.employees = employees;
@@ -33,7 +32,7 @@ class Cli {
         },
       ])
       .then((res) => {
-        //switch statement for the different options on inquirer.
+        // Switch statement for the different options on inquirer.
         switch (res.action) {
           case 'Add Animals to Zoo':
             this.startAnimalCli();
@@ -47,7 +46,7 @@ class Cli {
             break;
           case 'See Employee List':
             console.log(this.employees);
-            this.startCli(); //Recursive call to go back to main menu.
+            this.startCli(); // Recursive call to go back to main menu.
             break;
           case 'Feed Animals':
             this.feedAnimals();
@@ -61,9 +60,42 @@ class Cli {
       });
   }
 
-  // TODO: Update the startAnimalCli() method to create an Animal object and push to the animals array
-  startAnimalCli(): void {}
+  // Update the startAnimalCli() method to create an Animal object and push to the animals array
+  startAnimalCli(): void {
+    inquirer
+      .prompt([
+        {
+          type: 'input',
+          name: 'species',
+          message: 'What is the species of the animal?',
+        },
+        {
+          type: 'confirm',
+          name: 'hungry',
+          message: 'Is the animal hungry?',
+        },
+        {
+          type: 'number',
+          name: 'weight',
+          message: 'What is the weight of the animal?',
+        },
+        {
+          type: 'number',
+          name: 'amount',
+          message: 'How many of this species are there?',
+        },
+      ])
+      .then((res) => {
+        const newAnimal = new Animal(res.species, res.hungry, res.weight, res.amount);
+        this.animals.push(newAnimal);
+        console.log(`Added ${newAnimal.species} to zoo!`);
+        this.startCli();
+      });
+  }
+  //.then(res :Zooanimals)=>{
 
+  //}
+//
   startEmployeeCli(): void {
     inquirer
       .prompt([
@@ -83,8 +115,49 @@ class Cli {
       });
   }
 
-  // TODO: Update the startZooKeeperCli() method to create an Employee object and push to the employees array
-  startZooKeeperCli(): void {}
+  // Update the startZooKeeperCli() method to create an Employee object and push to the employees array
+  startZooKeeperCli(): void {
+    inquirer
+      .prompt([
+        {
+          type: 'input',
+          name: 'name',
+          message: 'What is their name?',
+        },
+        {
+          type: 'input',
+          name: 'id',
+          message: 'What is their ID number?',
+        },
+        {
+          type: 'input',
+          name: 'title',
+          message: 'What is their title?',
+        },
+        {
+          type: 'number',
+          name: 'salary',
+          message: 'What is their salary?',
+        },
+        {
+          type: 'input',
+          name: 'specialization',
+          message: 'What is their area of specialization?',
+        },
+      ])
+      .then((res) => {
+        const newZooKeeper = new ZooKeeper(
+          res.name,
+          res.id,
+          res.title,
+          res.salary,
+          res.specialization
+        );
+        console.log(`Please welcome to the team: ${newZooKeeper.name}!`);
+        this.employees.push(newZooKeeper);
+        this.startCli();
+      });
+  }
 
   startZooWorkerCli(): void {
     inquirer
@@ -97,17 +170,17 @@ class Cli {
         {
           type: 'input',
           name: 'id',
-          message: 'what is their ID number?',
+          message: 'What is their ID number?',
         },
         {
           type: 'input',
           name: 'title',
-          message: 'what is their title?',
+          message: 'What is their title?',
         },
         {
           type: 'number',
           name: 'salary',
-          message: 'what is their salary?',
+          message: 'What is their salary?',
         },
         {
           type: 'confirm',
@@ -129,8 +202,15 @@ class Cli {
       });
   }
 
-  // TODO: Update the feedAnimals() method to iterate through the animals array and if the animal is hungry, console the species will be fed.
-  feedAnimals(): void {}
+  // Update the feedAnimals() method to iterate through the animals array and if the animal is hungry, console the species will be fed.
+  feedAnimals(): void {
+    this.animals.forEach(animal => {
+      if (animal.hungry) {
+        console.log(`The ${animal.species} will be fed.`);
+      }
+    });
+    this.startCli();
+  }
 
   payEmployee(): void {
     inquirer
@@ -147,8 +227,16 @@ class Cli {
         },
       ])
       .then((res) => {
-        // TODO: Update the method to iterate through the employees array and find the name of the employee to receive pay.
+        const employee = this.employees.find(emp => emp.name === res.name);
+        if (employee) {
+          const totalPay = employee.receivePay(res.pay);
+          console.log(`${employee.name} has been paid $${totalPay}.`);
+        } else {
+          console.log('Employee not found.');
+        }
+        this.startCli();
       });
   }
 }
+
 export default Cli;
