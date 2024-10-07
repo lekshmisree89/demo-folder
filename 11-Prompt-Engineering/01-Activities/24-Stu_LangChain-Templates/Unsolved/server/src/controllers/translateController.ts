@@ -17,11 +17,21 @@ if (apiKey) {
 }
 
 // TODO: Create a new prompt template for formatting prompts
-const promptTemplate = new PromptTemplate();
+
+const promptTemplate = new PromptTemplate({
+
+  template: "can you translate to hindi and malayalam?\n{question}",//  Create a template for the prompt
+  inputVariables: ["question"]//  Add the input variable for the user's text
+
+});
+
+
 
 // Format the prompt using the prompt template with the user's text
-const formatPrompt = async (text: string): Promise<string> => {
-  return await promptTemplate.format({ text });
+const formatPrompt = async (text: string): Promise<string> => {//
+  //  Return the formatted prompt using the prompt template
+  return await promptTemplate.format({ question: text });
+  //  Use the input variable for the user's text
 };
 
 // Call the OpenAI API to get a response to the formatted prompt

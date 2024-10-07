@@ -16,12 +16,17 @@ if (apiKey) {
 } else {
   console.error('OPENAI_API_KEY is not configured.');
 }
+//I want to parse OpenAI responses into a cleanly formatted, parsed format.
+const parser = StructuredOutputParser.fromNamesAndDescriptions({
+  korean: "translate the user's text into Korean",
+  french: "translate the user's text into Korean, French and German.",
+  spanish: "translate the user's text into and German.",
+  german: "translate the user's text into German.",
+  explanation:  "The response from the OpenAI model." 
 
-// TODO: Create a parser to format the output response.
-const parser = StructuredOutputParser.fromNamesAndDescriptions();
-
+});
+//I want to format the prompt with the user's text.
 const formatInstructions = parser.getFormatInstructions();
-
 // Create a new prompt template for formatting prompts
 const promptTemplate = new PromptTemplate({
   template: "You are a helpful translator that understands all of the current languages in the world. You will translate anything that is asked of you while also understanding that phrases and addages may get lost in translation. In those cases, you will return a translated version of the user's phrase into Korean, French, Spanish and German.\n{format_instructions}\n{text}",
