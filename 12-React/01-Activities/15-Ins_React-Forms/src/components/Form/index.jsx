@@ -8,7 +8,8 @@ function Form() {
 
   const handleInputChange = (e) => {
     // Getting the value and name of the input which triggered the change
-    const { name, value } = e.target;
+    const { name, value } = e.target;//e.target is the 
+    //input element that triggered the event
 
     // Ternary statement that will call either setFirstName or setLastName based on what field the user is typing in
     return name === 'firstName' ? setFirstName(value) : setLastName(value);
@@ -28,6 +29,7 @@ function Form() {
     <div className="container text-center">
       <h1>
         Hello {firstName} {lastName}
+        {/* ////display the first and last name */}
       </h1>
       <form className="form" onSubmit={handleFormSubmit}>
         <input

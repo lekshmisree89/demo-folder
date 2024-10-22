@@ -11,27 +11,55 @@ const OmdbContainer = () => {
   const [result, setResult] = useState({});
   const [search, setSearch] = useState('');
 
-  // When the search form is submitted, use the API.search method to search for the movie(s)
+  // When the search form is submitted,
+  // use the API.search method to search for the movie(s)
+  // then update the state with the result
+
   const searchMovie = (query) =>
     API.search(query)
       .then((res) => {
-        setResult(res.data)
+        setResult(res.data)//set the result to the data from the api
+        //clear the search input
         setSearch('')
       })
       .catch((err) => console.log(err));
 
-  // TODO: Fix the useEffect hook running after every state change
+  //  Fix the useEffect hook 
+  //running after every state change
+  
   useEffect(() => {
     searchMovie('The Matrix');
-  });
+
+  }, []);
+
+
+  
+    
+    //useeffect hook running after every state change
+    
+   
+  
 
   // TODO: Fix the handleInputChange function
-  const handleInputChange = (e) => console.log(e.target.value);
-
-  // TODO: Fix the handleFormSubmit function not actually searching for the movie
-  const handleFormSubmit = (e) => {
-    e.preventDefault();
+  const handleInputChange = (e) => {
+    
     setSearch(e.target.value);
+
+
+  }
+
+ 
+
+
+  // TODO: Fix the handleFormSubmit function not actuall
+  //y searching for the movie
+const handleFormSubmit = (e) => {
+    e.preventDefault();
+  
+    searchMovie(search);
+
+
+
   };
 
   // Destructure the result object to make the code more readable, assign them to empty strings to start

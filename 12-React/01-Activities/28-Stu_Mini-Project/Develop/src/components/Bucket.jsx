@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import BucketForm from './BucketForm';
 
+
 function Bucket(props) {
   const [edit, setEdit] = useState({
     id: null,
@@ -12,9 +13,13 @@ function Bucket(props) {
 
   const submitUpdate = (value) => {
 
-    // TODO: Write logic to call the editBucketItem prop with the supplied values
+    // TODO: Write logic to call the editBucketItem prop with the supplied value
+    // and the edit.id
+    // Hint: You will need to destructure the edit object
 
+props.editBucketItem({id: edit.id, value: value.text, eagerness: value.eagerness});
     // TODO: Set the key:value pairs in the `edit` object back to empty strings
+    setEdit({id: null, value: '', eagerness: ''});
 
   };
 
@@ -27,17 +32,34 @@ function Bucket(props) {
     // TODO: Add a className of `bucket-row complete ${item.eagerness}` for completed items, and `bucket-row ${item.eagerness}` for non-completed items
     // TODO: Add a key attribute set to the value of the index position
     // Hint: use a ternary operator
-    <div className={} key={}>
+    
 
-      {/* TODO: Add an onClick event that invokes the `completeBucketItem` method passing the item id as a argument */}
-      <div key={} onClick={}>
-          {/* TODO: Add the item text here */}
+
+    <div className={`bucket-row  ${item.complete ? 'complete' : ''} ${item.eagerness}`}key={index}>
+      {/* TODO: Add an onClick event that invokes the `completeBucketItem` 
+      method passing the item id as a argument */}
+      <div 
+      key={item.id}
+      onClick={() => props.completeBucketItem(item.id)}>
+      {item.text}
       </div>
+          {/* TODO: Add the item text here */}
+      
+
+   
+
+
+
+     
       <div className="icons">
         {/* TODO: Add an onClick event update the `edit` object with the `id`, `value`, and `eagerness` properties */}
-        <p onClick={}> ✏️</p>
+        <p
+          onClick={() => setEdit({ id: item.id, value: item.value, eagerness: item.eagerness })}
+        >
+          </p >
         {/* TODO: Add an onClick event that will invoke the removeBucketItem method passing in the `item.id` */}
-        <p onClick={}> 🗑️</p>
+       <p onClick={() => props.removeBucketItem(item.id)}>🗑️</p>
+      
       </div>
     </div>
   ));

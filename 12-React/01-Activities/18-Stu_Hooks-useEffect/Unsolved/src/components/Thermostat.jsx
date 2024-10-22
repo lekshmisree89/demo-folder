@@ -1,12 +1,30 @@
 // Import `useEffect` Hook from React
+import React, { useEffect } from 'react';
 import { useState } from 'react';
 
 function Thermostat() {
   // Set the starting temperature
-  const [temp, setTemp] = useState(0);
+  const [temp, setTemp] = useState(72);
 
-  // TODO: Use the `useEffect` Hook to set the `document.title` to the current temperature
+
+  //todo//USEEFFECT HOOK
+  //use effect hook is used to perform side 
+  //effects in function components and it is triggered 
+  //after the component is rendered
+  //it takes two arguments, a function and an 
+  //array of dependencies
+
+  // Use the `useEffect` Hook to set the `document.title` to the current temperature
+  // This Hook runs after every render
+   useEffect(() => {
+    document.title = `Inside  Temperature: ${temp} degree Fahrenheit`;
+  },[ temp ]);
+  //dependency array is used to specify the
+  // values that the effect depends on\if no dependencies
+  // are specified, the effect runs after every render
+
   // YOUR CODE HERE
+
   //
 
   // Handler for increasing the temp by 1

@@ -6,8 +6,7 @@ Initializing a React application using `npm create vite` is fast and simple. Lik
 
 ### When you would like to scaffold a new `vite` application on your own, follow these steps
 
-1. In the command line, navigate to the desired parent folder and run `npm create vite`.
-
+1. In the command line, navigate to the desired parent folder and run `npm create vite`.n
     * 🔑 *Note*: This command will automatically create a sub-folder which will house your React application; you do not need to perform a `mkdir` command to create one manually.
 
 2. Enter the desired name of your new project folder.

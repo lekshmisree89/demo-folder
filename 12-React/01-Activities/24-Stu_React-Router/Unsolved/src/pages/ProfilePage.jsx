@@ -9,9 +9,13 @@ import API from '../utils/API';
 export default function ProfilePage() {
   const [user, setUser] = useState({});
 
-  // Todo: Use the useParams hook to find out which user profile has been requested by the user
+  // Todo: Use the useParams hook to find out 
+  //which user profile has been requested by the user
 
   const fetchData = async () => {
+    const { id } = useParams();
+    // Fetch the user data from the API using the id from the URL
+  
     const { data } = await API.getSingleUser(id);
 
     setUser(data);

@@ -28,7 +28,7 @@ function Form() {
       setEmail(inputValue);
     } else if (inputType === 'userName') {
       setUserName(inputValue);
-    }else{
+    }else if (inputType === 'password') {
       setPassword(inputValue);
     }
   };
@@ -54,7 +54,7 @@ function Form() {
     // If successful, we want to clear out the input after registration.
     setUserName('');
     // TODO: Set the password back to an empty string after the user clicks submit
-setPassword('');
+    setPassword('');
     setEmail('');
     alert(`Hello ${userName}`);
   };
@@ -86,7 +86,8 @@ setPassword('');
           placeholder="password"
         />
         
-        {/* TODO Add a `onChange` attribute with a value of `handleInputChange` */}
+       
+      
         <button type="submit">
           Submit
         </button>
