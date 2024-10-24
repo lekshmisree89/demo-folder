@@ -1,0 +1,33 @@
+const data = [
+  { letter: 'a' },
+  { letter: 'c' },
+  { letter: 'e' },
+  { letter: 'f' },
+  { letter: 'h' },
+  { letter: 'i' },
+  { letter: 'j' },
+  { letter: 'l' },
+  { letter: 'b' },
+  { letter: 'd' },
+  { letter: 'g' },
+  { letter: 'k' },
+  { letter: 'm' },
+    { letter: 'n' },
+    { letter: 'o' },
+    { letter: 'p' },
+    { letter: 'q' },
+    { letter: 'r' },
+    { letter: 's' },
+    { letter: 't' },
+    { letter: 'u' },
+    { letter: 'v' },
+    { letter: 'w' },
+    { letter: 'x' },
+    { letter: 'y' },
+    { letter: 'z' },
+
+
+];
+
+
+export default data;
