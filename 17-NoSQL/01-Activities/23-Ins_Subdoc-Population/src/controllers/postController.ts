@@ -31,7 +31,7 @@ import { Request, Response } from 'express';
       const post = await Post.create(req.body);
       const user = await User.findOneAndUpdate(
         { _id: req.body.userId },
-        { $addToSet: { posts: post._id } },
+        { $addToSet: { posts: post._id } },// Add the post to the user's posts array
         { new: true }
       );
 

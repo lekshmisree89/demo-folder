@@ -5,6 +5,8 @@ interface IDepartment extends Document {
   totalStock?: number;
   lastAccessed?: Date;
   getDocumentInfo(): void;
+  //custom instance method used to log the 
+  //name and total stock of the department
 }
 
 // Schemas define the shape of the documents within the collection.

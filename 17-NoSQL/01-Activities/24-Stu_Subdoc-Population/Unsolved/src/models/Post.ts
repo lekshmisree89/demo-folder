@@ -1,5 +1,9 @@
 import { Schema, model, Document, ObjectId } from 'mongoose';
 
+
+//When a user queries a `post`, 
+//the controller should return the `post` 
+//with an array that is populated with the associated `tags`.
 interface IPost extends Document {
   published: boolean;
   createdAt: Date;
@@ -8,6 +12,9 @@ interface IPost extends Document {
 
 }
 
+  
+
+  //virtual property `tagCount` that gets the amount of comments per user
 // Schema to create Post model
 const postSchema = new Schema<IPost>(
   {
@@ -21,7 +28,7 @@ const postSchema = new Schema<IPost>(
     },
     tags: [
       {
-        type: 'Tag',
+        type: Schema.Types.ObjectId,//subdocument of type ObjectId
         ref: 'Tag',
       },
     ],

@@ -4,7 +4,7 @@ interface IUser extends Document {
   first?: string;
   last?: string;
   age?: number;
-  posts: ObjectId[];
+  posts: ObjectId[];// Array of ObjectIds
   fullName?: string;
 }
 
@@ -16,8 +16,8 @@ const userSchema = new Schema(
     age: Number,
     posts: [
       {
-        type: Schema.Types.ObjectId,
-        ref: 'post',
+        type: Schema.Types.ObjectId,//subdocument of type ObjectId
+        ref: 'post',//refers to the Post model
       },
     ],
   },

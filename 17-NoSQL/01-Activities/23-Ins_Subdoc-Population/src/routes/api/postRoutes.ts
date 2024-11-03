@@ -4,6 +4,7 @@ import { getSinglePost, getPosts, createPost } from '../../controllers/postContr
 
 router.route('/').get(getPosts).post(createPost);
 
+//path: /api/posts/:postId
 router.route('/:postId').get(getSinglePost);
 
 export default router;

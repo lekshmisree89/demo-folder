@@ -6,26 +6,47 @@ import { Request, Response } from 'express';
 // TODO: Create an aggregate function to get the number of students overall
 
 export const headCount = async () => {
-    // Your code here
-    const numberOfStudents = await Student.aggregate()
-    return numberOfStudents;
+    const result = await Student.aggregate([
+        {
+            $count: 'headCount'//count is used to count the number of documents in a collection
+        }
+    ]);
+    return result[0].headCount;
 }
+
+//The `Student` controller should have a `grade` aggregate function that returns a single student and also the student's overall grade using MongoDB aggregate operators.
+
+//The project will require research of MongoDB operators such as `$addToSet`, `$unwind`, `$group`, `$match`, and `$avg`.
 
 // Aggregate function for getting the overall grade using $avg
 export const grade = async (studentId: string) =>
     Student.aggregate([
+        
         // TODO: Ensure we include only the student who can match the given ObjectId using the $match operator
-    {
-        // Your code here
-      },
+    
+        { $match: { _id: new ObjectId(studentId) } },
+        
+     
       {
-        $unwind: '$assignments',
+        $unwind: '$assignments',//unwind is used to deconstruct an array
       },
-      // TODO: Group information for the student with the given ObjectId alongside an overall grade calculated using the $avg operator
+      // TODO: Group information for the student 
+      //with the given ObjectId alongside an overall grade calculated using the $avg operator
       {
-        // Your code here
-      },
+        $group: {
+          _id: '$_id',
+          firstname: { $first: '$first' },
+            lastname: { $first: '$last' },
+            github: { $first: '$github' },
+          grade: { $avg: '$assignments.score' },
+        },
+        },
+    
     ]);
+
+
+
+     
 
 /**
  * GET All Students /students
@@ -176,3 +197,15 @@ export const removeAssignment = async (req: Request, res: Response) => {
         return res.status(500).json(err);
     }
 }
+
+// * The database must be seeded with sample data.
+
+// * The `Student` controller should have a `headCount` aggregate function to get the total number of students by making use of MongoDB aggregate operators.
+
+// * The `Student` controller should have a `grade` aggregate function that returns a single student and also the student's overall grade using MongoDB aggregate operators.
+
+// * The project will require research of MongoDB operators such as `$addToSet`, `$unwind`, `$group`, `$match`, and `$avg`.
+
+// * `Student` lookup will require use of the `ObjectId()` method.
+
+// * The endpoints `api/students/<student id>` and `api/students/` should be tested using Insomnia to ensure that the aggregate functions return the student's overall grade and headcount respectively.

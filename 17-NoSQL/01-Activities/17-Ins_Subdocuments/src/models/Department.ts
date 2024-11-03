@@ -36,7 +36,8 @@ const departmentSchema = new Schema<IDepartment>({
   // This will add a single subdocument to include the manager's information
   manager: managerSchema,
   // This will include an array that holds all the employees' information
-  employees: [employeeSchema],
+  employees: [employeeSchema],// This will add a field to store the 
+  //last time the document was accessed
   lastAccessed: { type: Date, default: Date.now },
 });
 

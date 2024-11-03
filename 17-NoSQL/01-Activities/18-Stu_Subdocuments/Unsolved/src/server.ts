@@ -1,7 +1,7 @@
 import express from 'express';
 import db from './config/connection.js';
 // Require model
-import { Library } from './models/index.js';
+import  Library from './models/Library.js';
 
 const PORT = process.env.PORT || 3001;
 const app = express();

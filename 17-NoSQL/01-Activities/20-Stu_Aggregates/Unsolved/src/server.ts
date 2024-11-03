@@ -21,7 +21,13 @@ app.get('/books', async (_req, res) => {
 app.get('/books/sum-price', async (_req, res) => {
   try {
     const result = await Book
-      .aggregate([
+
+      .aggregate
+      //When I test the `/books/sum-price` GET route in Insomnia, summary statistics for only books that are in stock should be returned.
+
+      ([
+        { $match: {inStock: true}},
+    
         {
           $group: {
             _id: null,

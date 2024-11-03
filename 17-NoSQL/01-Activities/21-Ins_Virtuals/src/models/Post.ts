@@ -5,6 +5,7 @@ interface IPost extends Document {
   text?: string;
   username?: string;
   comments?: string[];
+  // commentCount?: number;
 }
 
 // Schema to create Post model
@@ -16,7 +17,8 @@ const postSchema = new Schema<IPost>(
   },
   {
     toJSON: {
-      virtuals: true,
+      virtuals: true,//virtul is a extra
+      // field that is not stored in the database
     },
     id: false,
   }

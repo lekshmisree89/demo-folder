@@ -30,9 +30,12 @@ import { Request, Response } from 'express';
   }
 
 // TODO: Add comments to the functionality of the createApplication method
+// Create a new application
+
   export const createApplication = async (req: Request, res: Response) => {
     try {
-      const application = await Application.create(req.body);
+      const application = await Application.create(req.body);//it creates a new application by 
+      //using the Application model and the request body
       const user = await User.findOneAndUpdate(
         { _id: req.body.userId },
         { $addToSet: { applications: application._id } },
@@ -53,7 +56,27 @@ import { Request, Response } from 'express';
       return;
     }
   }
-  
+  // interface IApplication extends Document {
+  //   published: boolean;
+  //   createdAt: Date;
+  //   buildSuccess: boolean;
+  //   description: string;
+  //   tags: typeof Tag[];
+  //   getResponses: number;
+  // }insomnia post request
+  // {
+  //   "published": true,
+  //   "buildSuccess": true,
+  //   "description": "This is a test application",
+  //   "tags": [
+  //       {
+  //           "tagId": "60b5b1f3c3e5b7b9c3b2f5b5",
+  //           "tagName": "Test"
+  //       }
+  //   ],
+    //http://localhost:3001/api/applications/60b5b1f3c3e5b7b9c3b2f5b5/tag
+
+
   // TODO: Add comments to the functionality of the updateApplication method
   export const updateApplication = async (req: Request, res: Response) => {
     try {
@@ -103,14 +126,15 @@ import { Request, Response } from 'express';
       res.status(500).json(err);
       return;
     }
-  }
+  }//insomnia delete request
+  //http://localhost:3001/api/applications/60b5b1f3c3e5b7b9c3b2f5b5
 
    // TODO: Add comments to the functionality of the addTag method
   export const addTag = async (req: Request, res: Response) => {
     try {
       const application = await Application.findOneAndUpdate(
         { _id: req.params.applicationId },
-        { $addToSet: { tags: req.body } },
+        { $addToSet: { tags: req.body } },//
         { runValidators: true, new: true }
       );
 
@@ -139,7 +163,7 @@ import { Request, Response } from 'express';
         return res.status(404).json({ message: 'No application with this id!' });
       }
 
-      res.json(application);
+      res.json(application);//
       return;
     } catch (err) {
       res.status(500).json(err);

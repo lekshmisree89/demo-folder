@@ -2,8 +2,11 @@ import { Router } from 'express';
 const router = Router();
 import { createUser, getUsers, getSingleUser } from '../../controllers/userController.js';
 
-router.route('/').get(getUsers).post(createUser);
 
-router.route('/:userId').get(getSingleUser);
+///api/users /endpint 
+router.route('/').get(getUsers).post(createUser);//get all users and create a new user;get request and post request
+
+//api/users/:userId
+router.route('/:userId').get(getSingleUser);//get a single user post request
 
 export default router;

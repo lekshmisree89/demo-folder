@@ -1,12 +1,14 @@
 import { Schema, model } from 'mongoose';
 import Response from './Response.js';
+//import Thought from '../../../../02-Challenge/Unsolved/src/models/Thoughts';
 
 interface IVideo {
   published: boolean;
   createdAt: Date;
   advertiserFriendly: boolean;
   description: string;
-  responses: Response[];
+  responses: Response[];// Array of Response objects
+  //Thoughts: Thought[];
 }
 
 // Schema to create Post model

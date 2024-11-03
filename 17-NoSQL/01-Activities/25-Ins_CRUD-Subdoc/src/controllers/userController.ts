@@ -13,7 +13,9 @@ import { Request, Response } from 'express';
   export const getSingleUser = async(req: Request, res: Response) => {
     try {
       const user = await User.findOne({ _id: req.params.userId })
-        .select('-__v');
+        .select('-__v')
+        .populate('videos');
+        // Populate the videos field and exclude the __v field
 
       if (!user) {
          res.status(404).json({ message: 'No user with that ID' });

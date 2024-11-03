@@ -14,7 +14,8 @@ import { Request, Response } from 'express';
     try {
       const user = await User.findOne({ _id: req.params.userId })
         .select('-__v')
-        .populate('posts');
+        .populate('posts');// Populate the posts array
+        
 
       if (!user) {
         res.status(404).json({ message: 'No user with that ID' });

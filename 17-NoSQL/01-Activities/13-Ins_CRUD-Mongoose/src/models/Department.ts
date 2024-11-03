@@ -5,17 +5,18 @@ interface IDepartment extends Document {
   lastAccessed: Date;
 }
 
-const departmentSchema = new Schema<IDepartment>({
+const departmentSchema = new Schema<IDepartment>({// Define interface
+  // for department document
   name: { type: String, required: true },
-  lastAccessed: { type: Date, default: Date.now },
+  lastAccessed: { type: Date, default: Date.now },// Define fields for schema
 });
 
 const Department = model('Department', departmentSchema);
-
+// Create new document using model  
 
 // Will add data only if collection is empty to prevent duplicates
 // Note that two documents can have the same name value
-Department.find({})
+Department.find({})// Check if collection is empty
   .exec()
   .then(async collection => {
     if (collection.length === 0) {

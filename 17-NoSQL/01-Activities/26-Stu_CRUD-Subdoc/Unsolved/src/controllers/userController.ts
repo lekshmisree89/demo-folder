@@ -40,6 +40,26 @@ import { Request, Response } from 'express';
     }
   }
 
+  uodate a User
+  export const updateUser = async (req: Request, res: Response) => {
+    try {
+      const user = await User.findOneAndUpdate(
+        { _id: req.params.userId },
+        req.body,
+        { new: true, runValidators: true }
+      );
+
+      if (!user) {
+        return res.status(404).json({ message: 'No user with that ID' });
+      }
+
+      res.json(user);
+      return;
+    } catch (err) {
+      res.status(500).json(err);
+      return;
+    }
+  }
   // Delete a user and associated apps
   export const deleteUser = async (req: Request, res: Response) => {
     try {

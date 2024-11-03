@@ -11,6 +11,7 @@ app.use(express.json());
 
 // Creates a new department
 app.post('/departments', (req, res) => {
+  //const newDepartment = await Department.create({ name: req.body.name });
   const newDepartment = new Department({ name: req.body.name });
   newDepartment.save();
   if (newDepartment) {
@@ -56,6 +57,27 @@ app.delete('/departments/:name', async (req, res) => {
     res.status(500).json({ error: 'Something went wrong' });
   }
 });
+// Finds the first matching document by name and updates it.
+//crete a new route that updates a department by name
+//this route will use the findOneAndUpdate method
+//this method takes two arguments
+//the first argument is the query to find the document to update
+//the second argument is the update to apply
+app.put('/departments/:name', async (req, res) => {
+  try {
+    const result = await Department.findOneAndUpdate(
+      { name: req.params.name },//eg: { name: req.params.name }
+      { name: req//eg: { name: req.body.newName }
+    });
+    res.status(200).json(result);
+
+  } catch (err) {
+    console.log('Uh Oh, something went wrong');
+    res.status(500).json({ error: 'Something went wrong' });
+  }
+}
+);
+// Connect to database
 
 db.once('open', () => {
   app.listen(PORT, () => {

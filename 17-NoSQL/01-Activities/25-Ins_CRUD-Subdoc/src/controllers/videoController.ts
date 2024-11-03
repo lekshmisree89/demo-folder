@@ -32,6 +32,7 @@ import { Request, Response } from 'express';
   export const createVideo = async (req: Request, res: Response) => {
     try {
       const video = await Video.create(req.body);
+      
       const user = await User.findOneAndUpdate(
         { _id: req.body.userId },
         { $addToSet: { videos: video._id } },
@@ -85,7 +86,8 @@ import { Request, Response } from 'express';
   
       const user = await User.findOneAndUpdate(
         { videos: req.params.videoId },
-        { $pull: { videos: req.params.videoId } },
+        { $pull: { videos: req.params.videoId } }
+        ,//remove the video from the user's videos array
         { new: true }
       );
   
@@ -107,8 +109,9 @@ import { Request, Response } from 'express';
   export const addVideoResponse = async (req: Request, res: Response) => {
     try {
       const video = await Video.findOneAndUpdate(
-        { _id: req.params.videoId },
+        { _id: req.params.videoId },//find the video by id
         { $addToSet: { responses: req.body } },
+        //add the response to the responses array
         { runValidators: true, new: true }
       );
 
