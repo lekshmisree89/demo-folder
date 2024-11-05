@@ -6,6 +6,7 @@ import type { GameStart } from '../models/GameStart';
 import type { Game } from '../models/Game';
 import Keyboard from '../components/Keyboard/index.js';
 import WinLoss from '../components/WinLoss/index.js';
+import Countdown from '../components/Countdown/index.js';
 
 const KEYS: string[] = [
   "a",
@@ -14,10 +15,7 @@ const KEYS: string[] = [
   "d",
   "e",
   "f",
-  "g",
-  "h",
-  "i",
-  "j",
+  "g","h" ,"i","j",
   "k",
   "l",
   "m",
@@ -70,6 +68,8 @@ const GamePage = () => {
   const guesses = gameState?.guesses || [];
   const isWinner = gameState?.isWinner || false;
   const isComplete = gameState?.isComplete || false;
+  const isCorrect = gameState?.isCorrect || false;
+  const guessesRemaining = gameState?.guessesRemaining || 0;
 
   return (
     <main>
@@ -81,8 +81,12 @@ const GamePage = () => {
           {!isComplete &&
             <div data-cy="game-area">
               {
-                // TODO: Create a Countdown component that displays the number of guesses remaining and passes the provided tests
+
+                // TODO: Create a Countdown component that displays the number of guesses remaining and passes 
+                //the provided tests
+<Countdown guesses={gameState?.guessesRemaining || 0} isCorrect={gameState?.isCorrect} hasGuessed={gameState?.guesses.length > 0} />
               }
+                
               <Word word={maskedWord} />
               <Keyboard handleGuess={handleGuess} guesses={guesses} KEYS={KEYS} />
             </div>
@@ -92,6 +96,5 @@ const GamePage = () => {
       </div>
     </main>
   );
-};
 
 export default GamePage;

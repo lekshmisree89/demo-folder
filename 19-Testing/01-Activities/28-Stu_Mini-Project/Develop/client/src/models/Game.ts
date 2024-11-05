@@ -6,5 +6,7 @@ export interface Game {
   isComplete: boolean;
   isWinner: boolean;
   solution: string;
+  guessesRemaining: number;
+ 
   // TODO: Add a property to track the number of guesses remaining
 }

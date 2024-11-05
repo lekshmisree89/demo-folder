@@ -28,10 +28,12 @@ describe('Tech Thoughts Website', () => {
     cy.get('form div textarea').should('be.empty');
   });
 
+
+  //
   it('should not display any Comments on the page', () => {
     cy.get('container main .card .card-body').should(($el) => {
       const cards = [
-        ...$el.map((i, el) => {
+        ...$el.map((i, el) => {//
           return Cypress.$(el).text();
         })
       ].filter((text) => !text.includes("Comments"));
