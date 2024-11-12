@@ -6,9 +6,10 @@ import istanbul from "vite-plugin-istanbul";
 export default defineConfig({
 	plugins: [
 		react(),
-		istanbul({
+		istanbul({// istanbul is a function that is imported 
+			//from the vite-plugin-istanbul module
 			exclude: ["node_modules", "dist", "test", "cypress"],
-			cypress: true,
+			cypress: true,// cypress is a boolean value
 			requireEnv: false
 		}),
 	],

@@ -29,6 +29,7 @@
   "devDependencies": {
     "@cypress/code-coverage": "^3.12.44",
     "@istanbuljs/nyc-config-typescript": "^1.0.2",
+   
     "@testing-library/cypress": "^10.0.2",
     "@types/react": "^18.3.3",
     "@vitejs/plugin-react": "^4.3.1",

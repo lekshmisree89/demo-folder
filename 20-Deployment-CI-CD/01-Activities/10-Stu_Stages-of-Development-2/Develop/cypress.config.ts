@@ -9,7 +9,8 @@ export default defineConfig({
 		},
 		specPattern: "cypress/component/**/*.cy.{js,ts,jsx,tsx}",
 		setupNodeEvents(on, config) {
-			coverageTask(on, config);
+			coverageTask(on, config);// coverageTask is a function that 
+			//is imported from the code-coverage/task module
 
 			return config;
 		},
