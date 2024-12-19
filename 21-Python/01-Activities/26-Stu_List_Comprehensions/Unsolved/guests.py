@@ -1,25 +1,14 @@
-"""This script demonstrates the use of list comprehensions in Python"""
-
-
 def get_total_guests(guests):
     """Calculate the total number of guests"""
-    # TODO: Use list comprehension to calculate the total number of guests
-
-
-    # TODO: Return the total number of guests
-
-
+    # Use list comprehension to calculate the total number of guests
+    return sum([guest["party_number_adults"] + guest["party_number_children"] for guest in guests])
 
 def get_guest_list(guests):
     """Create a list of strings containing the invitation name and family name
     of each guest"""
-    # TODO: Use list comprehension to create a list of strings
-    # TODO: Each string should contain the invitation name and family name
-    # TODO: The invitation name and family name should be separated by a space
-
-
-    # TODO: Return the guest list
-
+  
+    # Use list comprehension to create a list of strings
+    return [f"{guest['invitation_name']} {guest['family_name']}" for guest in guests]
 
 # Do not edit the code below this line
 if __name__ == "__main__":

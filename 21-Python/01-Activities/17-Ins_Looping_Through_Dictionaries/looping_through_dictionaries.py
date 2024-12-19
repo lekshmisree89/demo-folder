@@ -5,7 +5,7 @@ planets = ("Mercury", "Venus", "Earth", "Mars", "Jupiter", "Saturn", "Uranus",
            "Neptune")
 planet_sizes = (2440, 6052, 6371, 3390, 69911, 58232, 25362, 24622)
 
-planets_dict = dict(zip(planets, planet_sizes))
+planets_dict = dict(zip(planets, planet_sizes))#zip() function to combine the two lists into a dictionary.
 
 print("Looping through a dictionary's keys:")
 

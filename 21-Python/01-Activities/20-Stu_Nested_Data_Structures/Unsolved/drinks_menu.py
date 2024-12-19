@@ -8,10 +8,15 @@ def display_drinks_menu(drinks_menu):
     Then prints out a formatted version of the drinks menu
     """
     # TODO: Loop through the drinks menu dictionary
+    for drink, options in drinks_menu.items():
+        print(drink)
+        print(options)
 
         # TODO: Print the drink name
 
         # TODO: Loop through the drink options
+        for option, price in options.items():
+            print(f"  {option}: ${price}")
 
             # TODO: Print the option and price
             # TODO: Use the format "  {option}: ${price}"

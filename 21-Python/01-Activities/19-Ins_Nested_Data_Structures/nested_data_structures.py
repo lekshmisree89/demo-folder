@@ -18,6 +18,7 @@ product_table = [
 print("Product table:")
 print(product_table)
 
+
 # Print "mug" from product_table using list indexing.
 print("Accessing a nested element: " + product_table[2][1])
 
